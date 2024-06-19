@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: elasticsearch
+
+
+  elasticsearch:
+    uris: http://localhost:9200
+    password: password
+    username: elastic
+
+    apm:
+      enabled: true
+      server-url: http://localhost:8200
+      service-name: elastic-apm-spring-boot-integration
+      secret-token:
+      environment: local
+      application-packages: com.phyex0
+      log-level: INFO
+      
+  threads:
+    virtual:
+      enabled: true
