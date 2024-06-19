@@ -19,3 +19,6 @@ To run the application do the following commands:</p>
 I also enabled the Virtual thread. This project runs Java 22.
 
 There are some basic crud operations with rest.</p>
+
+
+<br>To create custom queries => https://docs.spring.io/spring-data/elasticsearch/reference/elasticsearch/repositories/elasticsearch-repository-queries.html </br>
