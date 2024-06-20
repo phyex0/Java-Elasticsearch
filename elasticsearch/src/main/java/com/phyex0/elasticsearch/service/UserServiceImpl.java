@@ -6,6 +6,7 @@ import com.phyex0.elasticsearch.model.User;
 import com.phyex0.elasticsearch.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,6 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User createUser(User user) {
         if (Objects.nonNull(user.getId())) {
             Optional<User> byId = userRepository.findById(user.getId());
@@ -44,11 +46,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User updateUser(User user) {
         return userRepository.save(user);
     }
 
     @Override
+    @Transactional
     public String deleteUser(UUID id) {
         userRepository.deleteById(id);
         return String.format("User is deleted with ID [%s]", id);
